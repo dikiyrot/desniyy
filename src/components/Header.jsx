@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
@@ -7,7 +8,7 @@ const Nav = styled.nav`
    display: flex;
    align-items: center;
    padding: 0 36px;
-	overflow-x: hidden;
+   overflow-x: hidden;
 `;
 const Logo = styled.img`
    width: 80px;
@@ -39,7 +40,7 @@ const NavMenu = styled.div`
             right: 0;
             bottom: -6px;
             opacity: 0;
-				transition: all 0.25s ease 0s;
+            transition: all 0.25s ease 0s;
             transform: scaleX(0.5);
          }
       }
@@ -63,7 +64,9 @@ const UserImage = styled.img`
 const Header = () => {
    return (
       <Nav>
-         <Logo src="/images/logo.svg" />
+         <Link to="/">
+            <Logo src="/images/logo.svg" />
+         </Link>
          <NavMenu>
             <a>
                <img src="/images/home-icon.svg" />
