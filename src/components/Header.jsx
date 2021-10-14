@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { auth, provider } from '../firebase';
+
 
 const Nav = styled.nav`
    height: 70px;
@@ -61,7 +63,20 @@ const UserImage = styled.img`
    cursor: pointer;
 `;
 
+// export class dddsd{}
+
 const Header = () => {
+   // const handleAuth = () => {
+   // 	  auth
+   // 		 .signInWithPopup(provider)
+   // 		 .then((result) => {
+
+   // 			console.log(result);
+   // 		 })
+   // 		 .catch((error) => {
+   // 			alert(error.message);
+   // 		 });
+
    return (
       <Nav>
          <Link to="/">

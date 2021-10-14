@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import ImgSlider from './ImgSlider';
 import Viewers from './Viewers';
 import Movies from './Movies';
+import db from './../firebase';
+import { useDispatch } from 'react-redux';
 
 const Container = styled.main`
    min-height: calc(100vh - 70px);
@@ -23,10 +25,18 @@ const Container = styled.main`
 `;
 // const NavMenu = styled.div``
 
-const Home = () => {
+const Home = (props) => {
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		db.collection('movies').onSnapshot((snapshot) => {
+			console.log(snapshot)
+		})
+	}, [])
+
    return (
       <Container>
-         <ImgSlider />
+         <ImgSlider/>
 			<Viewers />
 			<Movies />
       </Container>

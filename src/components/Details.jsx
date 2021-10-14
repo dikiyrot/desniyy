@@ -91,6 +91,7 @@ const Description = styled.div`
    font-size: 20px;
    margin: 16px 0px 0px 0px;
    color: rgb(249, 249, 249);
+	max-width: 760px;
 `;
 
 const Details = () => {
